@@ -2,7 +2,7 @@
 在網頁流程中，前端主要負責瀏覽器到 Server 之間（如步驟 1、3 ），後端則負責 Server 存取資料庫（如步驟 2 ）
 
 1. 瀏覽器→ 傳送 Request 給 Server
-2. Server→ 去資料庫存取資料後
+2. Server→ 去資料庫存取資料後 
 3. Server→ 回傳 Response 給瀏覽器
 
 ****
