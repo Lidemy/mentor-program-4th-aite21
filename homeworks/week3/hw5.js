@@ -13,34 +13,29 @@ rl.on('line', (line) => {
 
 //  上面都不用管，只需要完成這個 function 就好，可以透過 lines[i] 拿取內容
 
-function Compare(AA, BB, K) {
-  if (AA === BB) return 'DRAW';
+function Compare(a, b, K) {
+  if (a === b) return 'DRAW';
+
   if (K === -1) {
-    const exchange = AA; // eslint-disable-line
-    AA = BB; // eslint-disable-line
-    BB = exchange; // eslint-disable-line
+    const exchange = a; // eslint-disable-line
+    a = b; // eslint-disable-line
+    b = exchange; // eslint-disable-line
   }
 
-  const lengtha = AA.length;
-  const lengthb = BB.length;
+  const lengthA = a.length;
+  const lengthB = b.length;
 
-  if (lengtha !== lengthb) {
-    return lengtha > lengthb ? 'A' : 'B';
+  if (lengthA !== lengthB) {
+    return lengthA > lengthB ? 'A' : 'B';
   }
-
-  for (let r = 0; r < lengtha; r += 1) {
-    if (AA[r] === BB[r]) {
-      return AA[r] > BB[r] ? 'A' : 'B';
-    }
-  }
+  return a > b ? 'A' : 'B';
 }
-
 
 function solve(input) {
   const M = Number(input[0]);
   for (let i = 1; i <= M; i += 1) {
-    const [AA, BB, K] = input[i].split(' ');
-    console.log(Compare(AA, BB, K));
+    const [a, b, K] = input[i].split(' ');
+    console.log(Compare(a, b, K));
   }
 }
 
