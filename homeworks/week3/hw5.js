@@ -16,7 +16,7 @@ rl.on('line', (line) => {
 function Compare(a, b, K) {
   if (a === b) return 'DRAW';
 
-  if (K === -1) {
+  if (K == -1) { // eslint-disable-line
     const exchange = a; // eslint-disable-line
     a = b; // eslint-disable-line
     b = exchange; // eslint-disable-line
@@ -32,9 +32,9 @@ function Compare(a, b, K) {
 }
 
 function solve(input) {
-  const M = Number(input[0]);
+  const M = Number(input[0]); // 比幾次的數字，第一行陣列
   for (let i = 1; i <= M; i += 1) {
-    const [a, b, K] = input[i].split(' ');
+    const [a, b, K] = input[i].split(' '); // abK分別為第[i]行的陣列字串
     console.log(Compare(a, b, K));
   }
 }
